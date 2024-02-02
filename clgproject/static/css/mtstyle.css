@@ -1,0 +1,11 @@
+a {
+    color:blue;
+    background-color:transparent;
+    text-decoration:none;
+    font-size:25px;
+}
+a:hover{
+    background-color:#2417db ;
+    color:white;
+    border-radius: 8px;
+}

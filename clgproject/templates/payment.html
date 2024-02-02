@@ -1,0 +1,59 @@
+{%load static%}<html>
+    <head>
+        <title>home page</title>
+       <style type="text/css">
+       a {
+        color:blue;
+        background-color:transparent;
+        text-decoration:none;
+        font-size:25px;
+    }
+    a:hover{
+        background-color:#2417db ;
+        color:white;
+        border-radius: 8px;
+    }
+    
+    body {
+	    background-image: url("static/images/bus.jpg");
+        background-repeat:no-repeat;
+        background-size:1600px 750px;
+    } 
+    </style>
+    </head>
+    <body><form>
+<table  align="center" style="width:100%">
+    <tr>
+        
+        <td colspan="2"><img src="{% static 'images/banner.png' %}" width="100%" height="150">
+    </tr>
+    </tr>
+    <tr style="background-color:aqua;"><td colspan="2">
+        <table>
+            <tr><td width="250"><a href="{% url 'home' %}">Home</a></td>
+            <td width="250"><a href="{% url 'login' %}">Login</a></td>
+            <td width="250"><a href="{% url 'registration' %}">Registration</a></td>
+            <td width="250"><a href="{% url 'routeinfo' %}">Routes</a></td> 
+            <td width="250"><a href="{% url 'payment' %}"  style="background-color:white; border-radius: 8px; color: #2417db;">Payment</a></td>
+            <td width="250"><a href="{% url 'contactus' %}">Contact Us</a></td>
+            
+            </tr>  
+            
+            
+        </table></td>
+    </tr>
+    
+    </tr>
+    <tr>
+        <td cospan="2">
+            <center>
+                <h1 style="color:blue;">QR CODE</h1>
+                <img src="{% static 'images/QR.jpeg' %}" width="35%" height="400" >
+            </center>
+
+        </td>
+    </tr>
+    </table>
+    </form>
+    </body>
+    </html>

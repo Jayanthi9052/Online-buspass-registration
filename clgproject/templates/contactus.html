@@ -1,0 +1,55 @@
+{%load static%}
+<html>
+    <head>
+        <title>home page</title>
+       
+<style>
+    a {
+    color:blue;
+    background-color:transparent;
+    text-decoration:none;
+    font-size:25px;
+}
+a:hover{
+    background-color:#2417db ;
+    color:white;
+    border-radius: 8px;
+}
+
+body {
+	background-image: url("static/images/bus.jpg");
+ background-repeat:no-repeat;
+ background-size:1600px 750px;
+} 
+</style>
+    </head>
+    <body>
+<form>
+<table  align="center" style="width:100%">
+    <tr>
+        
+        <td colspan="2"><img src="{%static 'images/banner.png'%}" width="100%" height="150"></tr>
+    </tr>
+    <tr style="background-color:aqua;"><td colspan="2">
+        <table style="width:100%">
+            <tr><td width="250"><a href="{% url 'home' %}">Home</a></td>
+                <td width="250"><a href="{% url 'login' %}">Login</a></td>
+                <td width="250"><a href="{% url 'registration' %}">Registration</a></td>
+                <td width="250"><a href="{% url 'contactus' %}" style="background-color:white; border-radius: 8px; color: #2417db;">Contact Us</a></td>
+                
+            </tr>  
+       </table></td>
+   </tr>
+<tr>
+<td colspan="2">
+<h1><center>Contact Us:-</center></h1>
+<h2> <center>For e-Payment/Refund Related Queries<center></h2><br>
+<h4><center><h3>e-Mail:</h3>anudeepthi@gmail.com<br>jalluhimabindu22@gmail.com<br>garlapadujayanthi@gmail.com<center><h4><br>
+<h2><center>for Other Queries<center></h2><br>
+<h3><center><h3>Phone No:</h3>9392762670<br>8464941350</center></h3>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+{%load static%}<html>
+    <head>
+        <title>home page</title><meta name="viewport" content="width=device-width, initial-scale=1">
+       <style type="text/css">a {
+        color:blue;
+        background-color:transparent;
+        text-decoration:none;
+        font-size:25px;
+    }
+    a:hover{
+        background-color:#2417db ;
+        color:white;
+        border-radius: 8px;
+       
+    }
+    
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 710px;
+  height: 400px;
+  
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+
+  color: black;
+}
+
+.flip-box-back {
+  color: black;
+  transform: rotateY(180deg);
+}
+    
+
+    </style>
+    </head>
+    <body >
+        <form>
+<table  align="center" style="width:100%">
+    <tr>
+        
+        <td colspan="2"><img src="{% static 'images/banner.png' %}" width="100%" height="150">
+            
+    </tr>
+    
+
+    
+    <tr><td colspan="2">
+        <tr style="background-color: white;"><table><marquee><img src="{% static 'images/bus1.jpeg' %}" style="height:100px;width:250px;"></marquee></table></tr>
+        <table style="background-color:aqua; width: 100%;">  
+            <tr ><td width="250"> <a href="{% url 'home' %}" style="background-color:white; border-radius: 8px; color: #2417db;">Home</a></td></div>
+            <td width="250"><a href="{% url 'login' %}">Login</a></td>
+            <td width="250"><a href="{% url 'registration' %}">Registration</a></td>
+            <td width="250"><a href="{% url 'contactus' %}">Contact Us</a></td>
+            </tr>
+            
+            
+        </table></td>
+    </tr>
+    <table>
+    <tr style="background-color:bisque">
+        <td >
+            <img src="{% static 'images/img4.jpeg' %}" width="750" height="500"  >  
+        </td>
+        <td  style="padding: 20PX;" >
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h1 align="center" style="color:blue">ABOUT US</h1>
+            <p style="font-size:25px "> Online Bus Pass Registration  is a web-based technology that will manage the records of the pass which is issue by administrative and also help to provide online bus pass to people who need to travel daily. Online Bus Pass Registration is helpful to bus administration by reducing the paperwork, time consumption and makes the process of getting bus passes as simple and fast.<br>
+
+                <br>Online Bus Pass Registration uses PHP and MySQL databases. This is the project which keeps records of the pass which is issue by the administrative.
+                
+                </p>
+                  </div>
+                  <div class="flip-box-back">
+                    <h1 align="center" style="color:blue">INSTRUCTIONS</h1>
+                    <h2>Hi user </h2>
+            <p style="font-size:25px "> If you are new user then go through Register Page and fill your correct details .                </p>
+            <p style="font-size:25px "> If you are here to renewal your pass just fill your correct details in the login page and renewal your pass.                </p>
+                  </div>
+                </div>
+              </div>
+              
+            
+        </td>
+    </tr>
+    </table>
+    </table>
+    </form>
+    </body>
+    </html>

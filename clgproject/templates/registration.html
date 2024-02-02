@@ -1,0 +1,168 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>home page</title>
+        <style>
+        a {
+    color:blue;
+    background-color:transparent;
+    text-decoration:none;
+    font-size:25px;
+}
+a:hover{
+    background-color:#2417db ;
+    color:white;
+    border-radius: 8px;
+}
+body{  
+            font-family: Calibri, Helvetica, sans-serif;
+	            background-image: url("static/images/bus.jpg");
+              background-repeat:no-repeat;
+              background-size:100% 100%;
+
+              
+          }  
+          .container {  
+              padding: 50px;  
+            background-color: white;  
+          }  
+            
+          input[type=text], input[type=password], textarea {  
+            width: 100%;  
+            padding: 15px;  
+            margin: 5px 0 22px 0;  
+            display: inline-block;  
+            border: none;  
+            background-color:#f1f1f1;  
+          }  
+          input[type=text]:focus, input[type=password],textarea:focus {  
+            background-color: white;  
+            outline: none;  
+          }  
+           div {  
+                      padding: 10px 0;  
+                   }  
+          hr {  
+            border: 1px solid #f1f1f1;  
+            margin-bottom: 25px;  
+          }  
+          .registerbtn {  
+            background-color: rgb(47, 7, 167);  
+            color: white;  
+            padding: 16px 20px;  
+            margin: 8px 0;  
+            border: none;  
+            cursor: pointer;  
+            width: 100%;  
+            opacity: 0.9; 
+             
+          }  
+          .registerbtn:hover {  
+            opacity: 1;  
+          }
+          </style>
+          <script type="text/javascript">
+        var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+
+          </script>
+    </head>
+    
+    <body>
+      <form id="f1" action="registration" method="POST">  
+        {%csrf_token%}
+<table  align="center" style="width:100%">
+    <tr>
+        
+        <td colspan="2"><img src="{% static 'images/banner.png' %}" width="100%" height="150">
+    </tr>
+  
+    <tr style="background-color:aqua;"><td colspan="2">
+        <table style="width:100%">
+            <tr><td width="250"><a href="{% url 'home' %}">Home</a></td>
+                <td width="250"><a href="{% url 'login' %}">Login</a></td>
+                <td width="250"><a href="{% url 'registration' %}"  style="background-color:white; border-radius: 8px; color: #2417db;">Registration</a></td>
+                <td width="250"><a href="{% url 'contactus' %}">Contact Us</a></td>
+                
+            </tr>  
+            
+            
+        </table></td>
+    </tr>
+  
+    <table align="center" style="width: 800px;height:1600px ;">
+    <tr><td>
+   
+
+        <div class="container">  
+        <center>  <h1><u>Registration Form</u></h1> </center>  
+        <hr>  
+        <label> Name: </label>   
+      <input type="text" name="name" placeholder= "name" size="30" required /> 
+      
+      
+      <label>fatherName: </label>   
+      <input type="text" name="fathername" placeholder="fathername" size="30" required />   
+         
+      <label> Date of Birth: </label>    
+      <input type="text" name="dob" placeholder="dob" size="15"required />   
+        
+      
+      <div>  
+      <label>   
+      Gender :  
+      </label><br>  
+      <input type="radio" value="Male" name="gender" checked > Male   
+      <input type="radio" value="Female" name="gender"> Female   
+      <input type="radio" value="Other" name="gender"> Other  
+        
+      </div>  
+      <label>   
+      Phone :  
+      </label>  
+      <input type="text" name="country code" placeholder="Country Code"  value="+91" size="2" readonly/>   
+      <input type="text" name="mobilenumber" placeholder="mobilenumber" size="10" required> 
+      <label> Aadhar number: </label>    
+      <input type="text" name="aadharnumber" placeholder="aadharnumber" size="15"required /> 
+          
+      Current Address :  
+      <textarea cols="80" rows="5" name="address" placeholder="address" value="address" required>  
+      </textarea>  
+       <label for="email"><b>Email</b></label>  
+       <input type="text" placeholder="Enter Email" name="email" required>  
+       <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+       <p><label for="file" style="cursor: pointer; background-color: rgb(122, 123, 124);border-radius: 6px;">Upload Image</label></p>
+       <p><img id="output" width="200" /></p>
+
+       <label for="username"><b>Username</b></label>  
+       <input type="text" placeholder="Enter username" name="username" required>  
+        
+          <label for="psw"><b>Password</b></label>  
+          <input type="password" placeholder="Enter Password" name="password" required>  
+        
+          <label for="psw-repeat"><b>Confirm Password</b></label>  
+          <input type="password" placeholder="Confirm Password" name="psw-repeat" required> 
+         
+          <input type="submit" class="registerbtn" name="registration" value='Register' onclick="rgsuccess()"/>
+          
+          
+         </div>
+          
+         <script>
+          function rgsuccess(){
+            alert("Registration successfully completed!!!")
+          }
+         </script>
+         
+                
+     
+      </td></tr> 
+      
+</table>
+      </form>  
+      </body>  
+      </html>
